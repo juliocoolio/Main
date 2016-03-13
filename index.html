@@ -22,10 +22,34 @@
           <a href="https://www.facebook.com/julio.gamarra.39" target="_blank">My Facebook<br />
               <a href="http://www.lolking.net/summoner/na/23586871" target="_blank">My LoLKing</a>
           <h2 id="project_tagline"></h2>
-          <img src="images/DSC_0048.JPG" alt="Picture of me" style="width:300px;height:200px;">
+          <img src="images/DSC_0048.JPG" alt="Picture of me" style="width:300px;height:200px;", class="myElement">
+              <style>
+            
+          
+              
+              img.myElement {
+    
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 300px;
+    border: 5px solid #73AD99;
+}
+          
+          </style>
+        <div class="desc">Picture of me taken at Whitetail by my good buddy Justin Chavez!</div>
+          
+    
+              
           <audio autoplay="autoplay" controls="controls" >
           <source src="music/This%20Song%20Saved%20My%20Life.mp3" type="audio/mpeg">
           </audio>
+        <style>
+      img.myElement {
+	       -webkit-filter: blur(0px);
+                }
+ 
+         </style>
 
         </header>
     </div>
@@ -79,7 +103,7 @@ body {
     function myFunction(){
         var result1;
         var num1 = String(document.getElementById("word").value);
-        xmlHttp.open("GET","http://words.bighugelabs.com/api/2/18c9fb66546582479e91fd2b1636746f/hi/json");
+        xmlHttp.open("GET","http://words.bighugelabs.com/api/2/18c9fb66546582479e91fd2b1636746f/hello/json");
         xmlHttp.send(null);
         xmlHttp.addEventListener("load",function(){
             if(xmlHttp.status === 200){

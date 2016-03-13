@@ -78,6 +78,22 @@ body {
             document.getElementById("demo").innerHTML = x;
         }
         </script>
+        <script>
+
+   
+       
+        function httpGetAsync(theUrl, callback)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() { 
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+            callback(xmlHttp.responseText);
+    }
+    xmlHttp.open("GET", "http://words.bighugelabs.com/api/2/18c9fb66546582479e91fd2b1636746f/hi", true); // true for asynchronous 
+    xmlHttp.send();
+}  
+        </script>
+            
         </form>
         <style type="text/css">
 	table.tableizer-table {

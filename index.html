@@ -67,34 +67,34 @@ body {
     background-color: white;
 }
 </style>
-        <form>
-        Enter the word that you would like to find a simpler synonym for:<br>
-        <input type="text" id="myText" value="">
-        <button name="data" type="button" onclick="myFunction()">Search!</button>
-        <p id="demo"></p>
-        <script>
-        function myFunction() {
-            var x = document.getElementById("myText").value;
-            document.getElementById("demo").innerHTML = x;
-        }
-        </script>
-        <script>
+        
+        
+  <label for="word">Enter word to search synonym for: </label><input type="text" name="word" id="word"/>
+  <button id="wordsearch">Search!</button>
 
-   
-       
-        function httpGetAsync(theUrl, callback)
-{
+  <p><span id="results"></span> </p>
+    
+    <script>
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.onreadystatechange = function() { 
-        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-            callback(xmlHttp.responseText);
+    function myFunction(){
+        var result1;
+        var num1 = String(document.getElementById("word").value);
+        xmlHttp.open("GET","http://words.bighugelabs.com/api/2/18c9fb66546582479e91fd2b1636746f/hi/json");
+        xmlHttp.send(null);
+        xmlHttp.addEventListener("load",function(){
+            if(xmlHttp.status === 200){
+                document.getElementById("results").innerHTML = "Synonyms: " + xmlHttp.responseText;
+            }});
+        
     }
-    xmlHttp.open("GET", "http://words.bighugelabs.com/api/2/18c9fb66546582479e91fd2b1636746f/hi", true); // true for asynchronous 
-    xmlHttp.send();
-}  
-        </script>
-            
-        </form>
+   
+    
+    document.getElementById("wordsearch").addEventListener("click", myFunction);
+
+        
+    </script>
+        
+        
         <style type="text/css">
 	table.tableizer-table {
 		font-size: 12px;

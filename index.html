@@ -62,6 +62,18 @@
     </div>
 
     <!-- FOOTER  -->
+        <form>
+        Enter the word that you would like to find a simpler synonym for:<br>
+        <input type="text" id="myText" value="Some text...">
+        <button onclick="myFunction()">Search!</button>
+        <p id="demo"></p>
+        <script>
+        function myFunction() {
+            var x = document.getElementById("myText").value;
+            document.getElementById("demo").innerHTML = x;
+        }
+        </script>
+        </form>
     <div id="footer_wrap" class="outer">
       <footer class="inner">
         <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
